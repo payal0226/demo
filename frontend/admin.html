@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<header><div class="container"><nav><a class="logo" href="index.html">BudgetTravel Admin</a></nav></div></header>
+<main class="container">
+  <h1>Manage Travel Packages</h1>
+  <section class="form-card" style="max-width:700px;">
+    <form id="admin-form">
+      <input id="pkg-id" type="hidden">
+      <div class="form-group"><label>Title</label><input id="title" required></div>
+      <div class="form-group"><label>Location</label><input id="location" required></div>
+      <div class="form-group"><label>Description</label><textarea id="description" required></textarea></div>
+      <div class="form-group"><label>Duration Days</label><input id="durationDays" type="number" min="1" required></div>
+      <div class="form-group"><label>Price</label><input id="price" type="number" min="1" required></div>
+      <div class="form-group"><label>Rating</label><input id="rating" type="number" min="1" max="5" step="0.1" required></div>
+      <div class="form-group"><label>Image URL</label><input id="imageUrl" required></div>
+      <button class="btn" type="submit">Save Package</button>
+    </form>
+    <p id="admin-message" class="message"></p>
+  </section>
+
+  <section class="card-grid" id="admin-packages"></section>
+</main>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
