@@ -1,0 +1,32 @@
+<div class="row g-4">
+  <div class="col-md-7">
+    <img src="<%= hotel.images[0] %>" class="img-fluid rounded shadow-sm mb-3" alt="<%= hotel.name %>">
+    <h2><%= hotel.name %></h2>
+    <p class="text-muted">📍 <%= hotel.location %> | ⭐ <%= hotel.rating %>/5</p>
+    <p><%= hotel.description %></p>
+    <h5 class="text-primary">$<%= hotel.price %> per night</h5>
+  </div>
+
+  <div class="col-md-5">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h4 class="mb-3">Book This Hotel</h4>
+        <form action="/bookings/<%= hotel._id %>" method="POST">
+          <div class="mb-2">
+            <label class="form-label">Check-in</label>
+            <input class="form-control" type="date" name="checkIn" required>
+          </div>
+          <div class="mb-2">
+            <label class="form-label">Check-out</label>
+            <input class="form-control" type="date" name="checkOut" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Guests</label>
+            <input class="form-control" type="number" name="guests" min="1" value="1" required>
+          </div>
+          <button class="btn btn-success w-100" type="submit">Confirm Booking</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

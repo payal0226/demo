@@ -1,0 +1,31 @@
+<h2 class="mb-4">My Booking History</h2>
+
+<div class="table-responsive">
+  <table class="table table-bordered table-hover">
+    <thead class="table-light">
+      <tr>
+        <th>Hotel</th>
+        <th>Location</th>
+        <th>Check-In</th>
+        <th>Check-Out</th>
+        <th>Guests</th>
+        <th>Total Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (!bookings.length) { %>
+        <tr><td colspan="6" class="text-center">No bookings yet.</td></tr>
+      <% } %>
+      <% bookings.forEach(booking => { %>
+        <tr>
+          <td><%= booking.hotelId?.name || 'Deleted Hotel' %></td>
+          <td><%= booking.hotelId?.location || '-' %></td>
+          <td><%= new Date(booking.checkIn).toDateString() %></td>
+          <td><%= new Date(booking.checkOut).toDateString() %></td>
+          <td><%= booking.guests %></td>
+          <td>$<%= booking.totalPrice %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>

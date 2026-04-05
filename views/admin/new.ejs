@@ -1,0 +1,5 @@
+<h2 class="mb-3">Add New Hotel</h2>
+<form action="/admin/hotels" method="POST" enctype="multipart/form-data" class="card p-4 shadow-sm">
+  <%- include('formFields', { hotel: null }) %>
+  <button class="btn btn-success mt-3" type="submit">Create Hotel</button>
+</form>
