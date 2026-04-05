@@ -1,0 +1,34 @@
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h2>Admin - Manage Hotels</h2>
+  <a href="/admin/hotels/new" class="btn btn-primary">Add Hotel</a>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped align-middle">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Price</th>
+        <th>Rating</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% hotels.forEach(hotel => { %>
+        <tr>
+          <td><%= hotel.name %></td>
+          <td><%= hotel.location %></td>
+          <td>$<%= hotel.price %></td>
+          <td><%= hotel.rating %></td>
+          <td class="d-flex gap-2">
+            <a class="btn btn-warning btn-sm" href="/admin/hotels/<%= hotel._id %>/edit">Edit</a>
+            <form action="/admin/hotels/<%= hotel._id %>?_method=DELETE" method="POST">
+              <button class="btn btn-danger btn-sm">Delete</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>

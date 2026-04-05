@@ -1,0 +1,17 @@
+body {
+  background: #f5f7fb;
+}
+
+.hero-section {
+  background: linear-gradient(135deg, #1a73e8, #00bcd4);
+}
+
+.hotel-card img {
+  height: 220px;
+  object-fit: cover;
+}
+
+.card {
+  border: 0;
+  border-radius: 0.85rem;
+}
